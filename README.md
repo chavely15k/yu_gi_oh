@@ -1,2 +1,3 @@
 # Yu-Gi-Oh!
-![](https://images.app.goo.gl/EMxavembkb2fAPcD9)
+
+![Texto alternativo](https://www.pockettactics.com/wp-content/sites/pockettactics/2022/02/Yu-Gi-Oh-Master-Duel-Dragon-deck-580x334.jpg)
