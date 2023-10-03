@@ -48,14 +48,12 @@
 Con el objetivo de validar las peticiones de los usuarios, as\'i como dar respuesta a las consultas de los mismos, es necesario mantener diversas informaciones en una base de datos:
 \begin{enumerate}
 	\item \textbf{Usuario:} De los usuarios se deben almacenar: un identificador para cada usuario, el nombre completo, el tel\'efono, la direcci\'on, el municipio y la provincia.
-	\item \textbf{Deck:} De los decks se deben almacenar: un identificador para cada deck distinto, el nombre del deck, la cantidad de cartas en el mazo principal, en el mazo alternativo y en el mazo extra, y el arquetipo.
-	\item \textbf{Torneo:} De los torneos se debe almacenar: un identificador para cada torneo, nombre del torneo, fecha de inicio y direcci\'on.
+	\item \textbf{Deck:} De los decks se deben almacenar: un identificador para cada deck distinto, el nombre del deck, la cantidad de cartas en el mazo principal, en el mazo alternativo y en el mazo extra, el arquetipo y el usuario que lo cre\'o.
+	\item \textbf{Torneo:} De los torneos se debe almacenar: un identificador para cada torneo, nombre del torneo, fecha de inicio, direcci\'on y el administrador que lo cre\'o.
 	\item \textbf{Rol:} Para cada uno de los roles que puede desempe\~nar un usuario en la aplicaci\'on se guarda un identificador y el nombre del rol.
 	\item \textbf{Partida:} De las partidas se debe almacenar: el identificador de cada usuario que participa(2 en total), el identificador del torneo al cual pertenece, la fecha exacta en la cual se realiza, el resultado de la partida(solo hay 4 resultados posibles: "2:1", "2:0", "1:2", "0:2") y la ronda del torneo en la cual se realiza.
-	\item \textbf{Solicitud de inscripci\'on en torneos:} Los jugadores solicitan inscribirse en alg\'un torneo disponible y estas solicitudes se almacenan hasta que alg\'un administrador las acepte e iscriba al jugador o las rechase. Para esto es necesario almacenar: el identificador del usuario, el identificador del torneo, el identificador del deck con el cual se desea inscribir y la fecha en la cual raliz\'o la solicitud. 
-	\item \textbf{Registro en torneo:} Cuando se registra un usuario en un torneo se debe almacenar: el identificador del usuario, el identificador del torneo y el identificador del deck con el cual se inscribi\'o.
-	\item \textbf{Registro de deck:} Cuando un usuario registra un deck como suyo se debe almacenar el identificador del usuario relacionado con el identificador del deck.
-	\item \textbf{Registro de usuario:} Para todos los usuarios se debe almacenar el identificador del usuario relacionado con el identificador del rol que este desempe\~na.
+	\item \textbf{Solicitud de inscripci\'on en torneos:} Los jugadores solicitan inscribirse en alg\'un torneo disponible y estas solicitudes se almacenan como pendientes hasta que alg\'un administrador las acepte e iscriba al jugador o las rechase. Para esto es necesario almacenar: el identificador del usuario, el identificador del torneo, el identificador del deck con el cual se desea inscribir, la fecha en la cual raliz\'o la solicitud y el estado de la solicitud. Los posibles estados son: pendiente, aceptado, rechazado.
+	\item \textbf{Registro de usuario:} Para todos los usuarios se debe almacenar el identificador del usuario relacionado con el identificador de cada rol que este desempe\~na.
 \end{enumerate} 
 \newpage
 \section{Modelo conceptual de la base de datos:}
@@ -153,6 +151,12 @@ Dados un esquema relacional $R (U, F)$ y una descomposición $\rho = (R1, R2, \l
 Mediante la aplicación del algoritmo pudimos hallar una descomposición $\rho$ que cumple con dos de las características de un diseño correcto. Ahora bien, la tercera condición (la satisfacción de PLJ) se puede comprobar fácilmente aplicando una de las consecuencias del lema que se presenta a continuación,
 
 \textbf{Consecuencia} Si la llave X de $R (U, F)$ está contenida completamente en alguno de los esquemas relacionales de la descomposición, entonces, se puede afirmar directamente que $\rho$ es un diseño correcto 
-En nuestro diserno se cumple con las tres propiedades requeridas las llaves candidatas (IDDeck, IDTournament) o (IDUser, IDTournament) y estas están completamente contenidas en $R5$.
+En nuestro diserno se cumple con las tres propiedades requeridas las llaves candidatas (IDDeck, IDTournament) o (IDUser, IDTournament) y estas están completamente contenidas en $R5$.\\ \\
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{table.png}
+  \label{fig:etiqueta}
+\end{figure}
 
 \end{document}
