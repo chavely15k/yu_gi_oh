@@ -24,7 +24,7 @@
 \begin{enumerate}
 	\item \textbf{Registro de usuarios:} Los usuarios se registran en la aplicación proporcionando su información personal: nombre completo, municipio, provincia, teléfono (opcional) y dirección.
 	\item \textbf{Registro de Decks:} Los jugadores registraran sus decks (mazos de cartas) asoci\'andolos con su perfil, incluyendo detalles como: nombre del deck, cantidad de cartas en el mazo principal, en el mazo alternativo y en el mazo extra, así como su arquetipo.
-	\item \textbf{Creaci\'on de torneos:} Los administradores pueden crear torneos especificando: nombre del torneo, fecha de inicio y dirección.
+	\item \textbf{Creaci\'on de torneos:} Los administradores pueden crear torneos especificando: nombre del torneo, fecha de inicio y dirección, un torneo puede ser creado por un solo administrador.
 	\item \textbf{Solicitud de inscripci\'on en torneos:} Los jugadores solicitan inscribirse en los torneos disponibles, asegur\'andose de que no puedan inscribirse despu\'es de la fecha de inicio del torneo, y con esactamente un deck. 
 	\item \textbf{Inscripci\'on en torneos:} Los administradores reciben las solicitudes de inscripci\'on de los jugadores a los torneos y se encargan de inscribirlos en los mismos.
     \item \textbf{Gestión de Rondas y Partidas:} La aplicaci\'on administra las rondas de los torneos, asignando aleatoriamente los emparejamientos.
@@ -61,8 +61,14 @@ Con el objetivo de validar las peticiones de los usuarios, as\'i como dar respue
 \section{Modelo conceptual de la base de datos:}
 \begin{figure}[h]
   \centering
-  \includegraphics[width=1\textwidth]{design.png}
+  \includegraphics[width=1\textwidth]{merx.png}
   \caption{Esquema Relacional}
+  \label{fig:etiqueta}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{relations.png}
+  \caption{Esquema Relacional separado por relaciones}
   \label{fig:etiqueta}
 \end{figure}
 \newpage
