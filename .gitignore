@@ -1,0 +1,8 @@
+# Ignorar archivos generados por Visual Studio Code
+.vscode
+mysqlefcore/.vscode
+
+# Ignorar archivos generados por la compilación
+mysqlefcore/obj/
+mysqlefcore/bin/
+
